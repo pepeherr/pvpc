@@ -282,7 +282,8 @@ def ayuda(update=Update, context=CallbackContext) -> None:
     El <b>PVPC</b> <i>(Precio Voluntario para el Pequeño Consumidor)</i> incluye\
     el término de energía de los peajes de acceso (Orden IET/107/2014, 31 de enero), los cargos y el coste de producción.\
     No incluye impuestos.\n \n "
-    mensaje= mensaje + "Los comandos dsponibles son los siguientes: \n"
+    mensaje = Mensaje + 'El código fuente está publicado en GitHub: <a href="https://github.com/pepeherr/pvpc">https://github.com/pepeherr/pvpc</a> \n \n'
+    mensaje = mensaje + "Los comandos dsponibles son los siguientes: \n"
     mensaje = mensaje +"/start -> Actualización de PVPC\'s \n"
     mensaje = mensaje + "/help -> Muestra este mensaje de ayuda"
     update.message.reply_text(mensaje, parse_mode='HTML')
