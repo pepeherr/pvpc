@@ -32,4 +32,4 @@ para posteriormente analizar los horarios mas baratos para el consumo electrico.
 Red Eléctrica de España publica cada día a las 20.15 horas los precios horarios para el día siguiente, sin embargo cada vez que ejecutamos el comando /start se produce una actualización de los precios desde la hora actual hasta la hora en que los datos han sido publicados para analizar cuales son, dentro de ese periodo los periodos más baratos
 
 Es un pequeño programa escrito en Python que fue diseñado inicialmente para crear variables de estado para HomeAssistant y poder establecer el arranque de equipos (termo eléctrico, lavadora, lavavajillas, ...) en los periodos más baratos.
-Posteriormente fue transformado en un bot de Telegram que podeis ver funcionando en aqui: <a href="https://t.me/PVPC_Horario_bot">@PVPC_Horario_bot</a>
+Posteriormente fue transformado en un bot de Telegram que podeis ver funcionando aqui: <a href="https://t.me/PVPC_Horario_bot">@PVPC_Horario_bot</a>
