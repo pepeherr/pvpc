@@ -24,8 +24,7 @@ los peajes de acceso (Orden IET/107/2014, 31 de enero), los cargos y el coste de
 No incluye impuestos.
 
 Para ello usaremos un enlace semejante al que sigue, como ejemplo:
-https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?
-start_date=2021-11-20T00:00&end_date=2021-11-22T23:59&time_trunc=hour&geo_limit=peninsular
+https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date=2021-11-20T00:00&end_date=2021-11-22T23:59&time_trunc=hour&geo_limit=peninsular
 &geo_id=4
 
 El formato en el que se obtiene es json y lo transformamos e incluimos en un dataframe
