@@ -1,1 +1,2 @@
-config/
+pvpc/config/
+pvpc/config/auth.py
