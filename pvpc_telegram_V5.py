@@ -220,7 +220,8 @@ def prox_pvpc( ud, telegram, figura):
         tabla_pvpc=proximos[proximos.columns[0:4]].to_string(col_space = 7, index = False, justify="center", header=["__  Fecha   ", \
                                                                                             "___    Hora    __", unidades, "_ Dif Med"])
     else:
-        print(f"{t_dia_semana}{t_ahora}")
+        # caso de que no queramos subirlo a telegram lo veriamos en la consola de python
+	print(f"{t_dia_semana}{t_ahora}")
         print(f"Última actualización del PVPC realizada por REE el {u_actualización}")
         print()
         print(f'· Precio actual {precio_actual} {unidades}')
@@ -256,35 +257,20 @@ def prox_pvpc( ud, telegram, figura):
             plt.show()
     return(texto, tabla_pvpc)
 
-def verif_actualizacion():
-    actualizado = True
-    datos = compone_enlace()
-    ultima_actualizacion=datetime.strptime(datos["data"]['attributes']['last-update'][0:10],"%Y-%m-%d")
-    ahora = datetime.now()
-    if ultima_actualizacion < ahora:
-        actualizado = False
-        time.sleep(5*60)
-        print (datetime.now().strftime("%d/%m/%Y %H:%M"))
-        verif_actualizacion()
-    else:
-        prox_pvpc(ud='M', telegram=False, figura=True)
-        actualizado=True
-    return (actualizado)
-
 def start(update=Update, context=CallbackContext) -> None:
     #c_id = get_chat_id(update, context)
     fn_usuario = str(update.message.chat.first_name)
     un_usuario = str(update.message.chat.username)
-    #chat_id = str(bot.bot_chatID)
+    # en futura versión es meor escribir los nombres de los usuarios que usan el bot
+    # para posteriormente enviarles actualizaciones de versiones
     logger.info('He recibido un comando /start de ' + fn_usuario + ' username ' + un_usuario)
-    #bot.send_message('Recibida solicitud')
-    #bot.send_message(chat_id=update.message.chat_id, text="Recibida solicitud de actualización")
     update.message.reply_text('Hola ' + fn_usuario + ', actualizo el PVPC')
     resultado=prox_pvpc(ud='M', telegram=True, figura=True)
     update.message.reply_text(resultado[0] + '\n' + resultado[1], parse_mode='HTML')
     # Incluye gráfico y después elimina el archivo
     imagen="img_temp.png"
     update.message.reply_photo(open(imagen, 'rb'))
+    # borra el archivo temporal que habiamos guardado
     os.remove(imagen)
     
 def ayuda(update=Update, context=CallbackContext) -> None:
@@ -300,15 +286,16 @@ def ayuda(update=Update, context=CallbackContext) -> None:
     mensaje = mensaje + "/help -> Muestra este mensaje de ayuda"
     update.message.reply_text(mensaje, parse_mode='HTML')
 
-def main():
+def main() -> None:
     updater = Updater(token=bot_token, use_context=True)
     dispatcher = updater.dispatcher
+    # Estos son los comandos que escucharemos para reaccionar:
     dispatcher.add_handler(CommandHandler('start', start))
     dispatcher.add_handler(CommandHandler('help', ayuda))
     updater.start_polling(drop_pending_updates=True)
     updater.idle()
 
-# Ahora comienza todo ....
+# Aquí comienza todo ....
 print('Inicio ...')
 
 if __name__ == '__main__':
