@@ -40,6 +40,7 @@ import schedule
 import os
 import time
 
+# En pvpc/config/auth.py se encuentran el bot_token y el bot_chatID
 from config.auth import bot_token, bot_chatID
 
 import logging
