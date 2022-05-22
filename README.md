@@ -26,7 +26,7 @@ No incluye impuestos.
 Para ello usaremos un enlace semejante al que sigue, como ejemplo:
 https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date=2021-11-20T00:00&end_date=2021-11-22T23:59&time_trunc=hour&geo_limit=peninsular&geo_id=4
 
-El formato en el que se obtiene es json y lo transformamos e incluimos en un dataframe
+El formato en el que se obtiene en la consulta es json y lo transformamos e incluimos en un dataframe
 para posteriormente analizar los horarios mas baratos para el consumo electrico.
 
 Red Eléctrica de España publica cada día a las 20.15 horas los precios horarios para el día siguiente, sin embargo cada vez que ejecutamos el comando /start se produce una actualización de los precios desde la hora actual hasta la hora en que los datos han sido publicados para analizar cuales son, dentro de ese periodo los periodos más baratos
