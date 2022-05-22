@@ -1,2 +1,8 @@
-pvpc/config/
-pvpc/config/auth.py
+config/
+config/auth.py
+*.[oa]
+*~
+__pycache__/
+*.py[cod]
+*$py.class
+.git/

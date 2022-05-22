@@ -16,7 +16,7 @@ Here are some ideas to get you started:
 -->
 # pvpc
 Obtiene precios de energia a traves de la API de REE definida en el sitio
-https://www.ree.es/es/apidatos
+<a href=https://www.ree.es/es/apidatos>https://www.ree.es/es/apidatos</a>
 Obtendremos el PVPC: Precio horario del término de energía que se aplican en la factura eléctrica
 de los consumidores con una potencia contratada no superior a 10 kW y que estén acogidos
 al PVPC (Precio Voluntario para el Pequeño Consumidor).Incluye el término de energía de
