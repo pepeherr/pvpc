@@ -40,9 +40,17 @@ import schedule
 import os
 import time
 
-# En pvpc/config/auth.py se encuentran el bot_token y el bot_chatID
-from config.auth import bot_token, bot_chatID
+# En pvpc/config/auth.py se encuentran el bot_token
+from config.auth import bot_token
+''' 	IMPORTANTE
+Debe existit dentre de la carpeta config un archivo denominado
+auth.py
+su contenido debe ser el siguiente:
+bot_tocken = "el_tocken_de_acceso_a_mi_bot"
+Por razones de seguridad no lo incluimos aqui pero es obtenido mediante la anterior linea:
+from config.auth import bot_tocken
 
+'''
 import logging
 
 from telegram import (
